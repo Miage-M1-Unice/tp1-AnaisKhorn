@@ -15,7 +15,7 @@ public class TP1 {
 
         //ex1.methode1(file);
         //ex2.methode2(file);
-        System.out.println("\n");
+        /*System.out.println("\n");
         System.out.println("Question 1a) 3 (partie 1)");
         ex3.methode3(file);
         System.out.println("\n");
@@ -23,7 +23,9 @@ public class TP1 {
         ex3.methode4(file);
         System.out.println("\n");
         System.out.println("Question 1a) 3 (partie 3)");
-        ex3.methode5(file);
+        ex3.methode5(file);*/
+
+        ex3.methode6(file);
     }
 
     private void methode1(File file) {
@@ -82,6 +84,21 @@ public class TP1 {
             }
         }
     }
+
+    //exercice 1c)
+    private void methode6(File file) {
+
+        for(File elt : file.listFiles()){
+            if (elt.isDirectory()){
+                for(String fic : elt.list(new FilterRegex())){
+                    System.out.println(fic);
+                }
+                methode6(elt);
+            }
+        }
+    }
+
+
 }
 
 
